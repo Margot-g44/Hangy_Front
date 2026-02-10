@@ -1,25 +1,17 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { HealthService } from './services/health.service';
+// src/app/app.ts
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './components/auth/auth';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HttpClientModule],
-  template: `<h1>{{ message }}</h1>`,
+  imports: [CommonModule, FormsModule, HttpClientModule, AuthComponent],
+  template: `
+    <h1>Hangy Frontend</h1>
+    <app-auth></app-auth>
+  `,
 })
-export class AppComponent implements OnInit {
-  message = '';
-
-  constructor(private healthService: HealthService) {}
-
-  ngOnInit() {
-    this.healthService.getHealth().subscribe({
-      next: (res) => (this.message = res),
-      error: (err) => {
-        console.error('Backend not reachable', err);
-        this.message = 'Backend not reachable';
-      },
-    });
-  }
-}
+export class App {}

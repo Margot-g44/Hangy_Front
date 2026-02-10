@@ -1,0 +1,30 @@
+.auth-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container div {
+  margin-bottom: 10px;
+}
+
+.auth-container label {
+  display: block;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  margin-top: 15px;
+  color: green;
+}
